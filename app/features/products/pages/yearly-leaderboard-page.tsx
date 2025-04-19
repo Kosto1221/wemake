@@ -1,12 +1,12 @@
 import type { Route } from "./+types/yearly-leaderboard-page";
-import type { MetaFunction } from "@react-router/types";
+import type { MetaFunction } from "react-router";
 
-export function meta({ params }: Route.MetaArgs): MetaFunction {
+export const meta: MetaFunction = ({ params }) => {
   return [
     { title: `${params.year} Leaderboard | ProductHunt Clone` },
     { name: "description", content: `Top products of ${params.year}` },
   ];
-}
+};
 
 export function loader({ params }: Route.LoaderArgs) {
   return {
