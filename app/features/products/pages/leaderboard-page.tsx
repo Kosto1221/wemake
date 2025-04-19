@@ -1,12 +1,12 @@
 import type { Route } from "./+types/leaderboard-page";
-import type { MetaFunction } from "@react-router/types";
+import type { MetaFunction } from "react-router";
 
-export function meta(): MetaFunction {
+export const meta: MetaFunction = () => {
   return [
     { title: "Leaderboard | ProductHunt Clone" },
     { name: "description", content: "Top products leaderboard" },
   ];
-}
+};
 
 export function loader({ request }: Route.LoaderArgs) {
   return {

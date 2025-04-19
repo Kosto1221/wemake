@@ -1,12 +1,12 @@
 import type { MetaFunction } from "react-router";
 import type { Route } from "./+types/categories-page";
 
-export function meta(): MetaFunction {
+export const meta: MetaFunction = () => {
   return [
     { title: "Categories | ProductHunt Clone" },
     { name: "description", content: "Browse products by category" },
   ];
-}
+};
 
 export function loader({ request }: Route.LoaderArgs) {
   return {

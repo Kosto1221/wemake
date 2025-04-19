@@ -1,12 +1,12 @@
 import type { Route } from "./+types/submit-page";
-import type { MetaFunction } from "@react-router/types";
+import type { MetaFunction } from "react-router";
 
-export function meta(): MetaFunction {
+export const meta: MetaFunction = () => {
   return [
     { title: "Submit Product | ProductHunt Clone" },
     { name: "description", content: "Submit your product" },
   ];
-}
+};
 
 export function action({ request }: Route.ActionArgs) {
   // Add product submission logic
