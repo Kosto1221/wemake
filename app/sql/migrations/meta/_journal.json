@@ -64,6 +64,20 @@
       "when": 1745409358992,
       "tag": "0008_charming_jack_power",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1745413680866,
+      "tag": "0009_quick_calypso",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1745413853037,
+      "tag": "0010_fresh_the_spike",
+      "breakpoints": true
     }
   ]
 }
