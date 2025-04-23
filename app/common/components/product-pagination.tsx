@@ -7,7 +7,7 @@ import {
   PaginationEllipsis,
   PaginationNext,
   PaginationPrevious,
-} from "~/common/components/ui/pagination";
+} from "./ui/pagination";
 
 type ProductPaginationProps = {
   totalPages: number;
@@ -20,7 +20,7 @@ export default function ProductPagination({
   const page = Number(searchParams.get("page") ?? 1);
   const onClick = (page: number) => {
     searchParams.set("page", page.toString());
-    setSearchParams(searchParams);
+    setSearchParams(searchParams, { preventScrollReset: true });
   };
   return (
     <div>
