@@ -1,6 +1,6 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import { ProductCard } from "../components/product-card";
-import ProductPagination from "~/common/product-pagination";
+import ProductPagination from "~/common/components/product-pagination";
 import type { Route } from "./+types/category-page";
 
 export const meta = ({ params }: Route.MetaArgs) => {

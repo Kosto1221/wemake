@@ -1,4 +1,4 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import type { Route } from "./+types/community-page";
 import { Form, Link, useSearchParams } from "react-router";
 import { Button } from "~/common/components/ui/button";

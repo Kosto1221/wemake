@@ -1,4 +1,4 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import type { Route } from "./+types/teams-page";
 import { TeamCard } from "../components/team-card";
 

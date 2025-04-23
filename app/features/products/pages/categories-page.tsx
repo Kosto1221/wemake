@@ -1,4 +1,4 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import { CategoryCard } from "../components/categoty-card";
 import type { Route } from "./+types/categories-page";
 

@@ -1,4 +1,4 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import type { Route } from "./+types/promote-page";
 import { Form } from "react-router";
 import { Select } from "~/common/components/ui/select";

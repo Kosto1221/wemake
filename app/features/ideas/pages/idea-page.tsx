@@ -1,6 +1,6 @@
 import { DotIcon, HeartIcon } from "lucide-react";
 import { EyeIcon } from "lucide-react";
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import { Button } from "~/common/components/ui/button";
 
 export const meta = () => {

@@ -1,4 +1,4 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import type { Route } from "./+types/leaderboard-page";
 import { Button } from "~/common/components/ui/button";
 import { ProductCard } from "../components/product-card";

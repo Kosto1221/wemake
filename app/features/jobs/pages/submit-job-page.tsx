@@ -1,4 +1,4 @@
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import type { Route } from "./+types/submit-job-page";
 import { Form } from "react-router";
 import InputPair from "~/common/components/input-pair";

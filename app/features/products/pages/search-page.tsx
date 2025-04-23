@@ -1,8 +1,8 @@
 import { z } from "zod";
 import type { Route } from "./+types/search-page";
-import { Hero } from "~/common/hero";
+import { Hero } from "~/common/components/hero";
 import { ProductCard } from "../components/product-card";
-import ProductPagination from "~/common/product-pagination";
+import ProductPagination from "~/common/components/product-pagination";
 import { Form } from "react-router";
 import { Input } from "~/common/components/ui/input";
 import { Button } from "~/common/components/ui/button";
