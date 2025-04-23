@@ -14,7 +14,6 @@ import { Input } from "~/common/components/ui/input";
 import { PostCard } from "../components/post-card";
 import { getPosts, getTopics } from "../queries";
 import { z } from "zod";
-import { parseDomainOfCategoryAxis } from "recharts/types/util/ChartUtils";
 
 export const meta: Route.MetaFunction = () => {
   return [{ title: "Community | wemake" }];
