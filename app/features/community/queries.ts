@@ -3,7 +3,7 @@
 // import { asc, count, desc, eq } from "drizzle-orm";
 // import { profiles } from "../users/schema";
 
-import client from "supa-client";
+import client from "~/supa-client";
 
 // export const getTopics = async () => {
 //   const allTopics = await db
