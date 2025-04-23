@@ -43,6 +43,13 @@
       "when": 1745390670260,
       "tag": "0005_noisy_thundra",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1745391544035,
+      "tag": "0006_perpetual_nighthawk",
+      "breakpoints": true
     }
   ]
 }
