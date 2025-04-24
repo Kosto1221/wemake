@@ -104,9 +104,7 @@ export const getProductsBySearch = async ({
   const { data, error } = await client
     .from("products")
     .select(productListSelect)
-    // .ilike("name", `%${query}`)
-    // .ilike("tagline", `%${query}`)
-    .or(`name.ilike.%${query}%,tagline.ilike.%${query}%`)
+    .or(`name.ilike.%${query}%, tagline.ilike.%${query}%`)
     .range((page - 1) * PAGE_SIZE, page * PAGE_SIZE - 1);
   if (error) throw error;
   return data;
@@ -116,7 +114,7 @@ export const getPagesBySearch = async ({ query }: { query: string }) => {
   const { count, error } = await client
     .from("products")
     .select(`product_id`, { count: "exact", head: true })
-    .or(`name.ilike.%${query}%,tagline.ilike.%${query}%`);
+    .or(`name.ilike.%${query}%, tagline.ilike.%${query}%`);
   if (error) throw error;
   if (!count) return 1;
   return Math.ceil(count / PAGE_SIZE);
@@ -126,8 +124,27 @@ export const getProductById = async (productId: string) => {
   const { data, error } = await client
     .from("product_overview_view")
     .select("*")
-    .eq("product_id", Number(productId))
+    .eq("product_id", productId)
     .single();
+  if (error) throw error;
+  return data;
+};
+
+export const getReviews = async (productId: string) => {
+  const { data, error } = await client
+    .from("reviews")
+    .select(
+      `
+        review_id,
+        rating,
+        review,
+        created_at,
+        user:profiles!inner(
+          name,username,avatar
+        )
+      `
+    )
+    .eq("product_id", productId);
   if (error) throw error;
   return data;
 };
