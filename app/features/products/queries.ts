@@ -124,7 +124,7 @@ export const getProductById = async (productId: string) => {
   const { data, error } = await client
     .from("product_overview_view")
     .select("*")
-    .eq("product_id", productId)
+    .eq("product_id", Number(productId))
     .single();
   if (error) throw error;
   return data;
@@ -144,7 +144,7 @@ export const getReviews = async (productId: string) => {
         )
       `
     )
-    .eq("product_id", productId);
+    .eq("product_id", Number(productId));
   if (error) throw error;
   return data;
 };
