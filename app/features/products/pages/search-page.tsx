@@ -6,7 +6,9 @@ import ProductPagination from "~/common/components/product-pagination";
 import { Form } from "react-router";
 import { Input } from "~/common/components/ui/input";
 import { Button } from "~/common/components/ui/button";
-import { getPagesBySearch, getProductsBySearch } from "../queries";
+import { getProductsBySearch, getPagesBySearch } from "../queries";
+import { makeSSRClient } from "~/supa-client";
+
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Search Products | wemake" },
@@ -14,14 +16,14 @@ export const meta: Route.MetaFunction = () => {
   ];
 };
 
-const paramsSchema = z.object({
+const searchParams = z.object({
   query: z.string().optional().default(""),
   page: z.coerce.number().optional().default(1),
 });
 
 export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
-  const { success, data: parsedData } = paramsSchema.safeParse(
+  const { success, data: parsedData } = searchParams.safeParse(
     Object.fromEntries(url.searchParams)
   );
   if (!success) {
@@ -30,11 +32,14 @@ export async function loader({ request }: Route.LoaderArgs) {
   if (parsedData.query === "") {
     return { products: [], totalPages: 1 };
   }
-  const products = await getProductsBySearch({
+  const { client, headers } = makeSSRClient(request);
+  const products = await getProductsBySearch(client, {
     query: parsedData.query,
     page: parsedData.page,
   });
-  const totalPages = await getPagesBySearch({ query: parsedData.query });
+  const totalPages = await getPagesBySearch(client, {
+    query: parsedData.query,
+  });
   return { products, totalPages };
 }
 
