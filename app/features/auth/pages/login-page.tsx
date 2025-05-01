@@ -1,6 +1,6 @@
 import { Button } from "~/common/components/ui/button";
 import type { Route } from "./+types/login-page";
-import { Form, Link, useNavigation, redirect } from "react-router";
+import { Form, Link, redirect, useNavigation } from "react-router";
 import InputPair from "~/common/components/input-pair";
 import AuthButtons from "../components/auth-buttons";
 import { LoaderCircle } from "lucide-react";
@@ -19,8 +19,12 @@ const formSchema = z.object({
     })
     .email("Invalid email address"),
   password: z
-    .string({ required_error: "Password is required" })
-    .min(8, { message: "Password must be at least 8 characters" }),
+    .string({
+      required_error: "Password is required",
+    })
+    .min(8, {
+      message: "Password must be at least 8 characters",
+    }),
 });
 
 export const action = async ({ request }: Route.ActionArgs) => {
@@ -51,7 +55,8 @@ export const action = async ({ request }: Route.ActionArgs) => {
 
 export default function LoginPage({ actionData }: Route.ComponentProps) {
   const navigation = useNavigation();
-  const isSubmitting = navigation.state === "submitting";
+  const isSubmitting =
+    navigation.state === "submitting" || navigation.state === "loading";
   return (
     <div className="flex flex-col relative items-center justify-center h-full">
       <Button variant={"ghost"} asChild className="absolute right-8 top-8 ">
