@@ -63,7 +63,6 @@ export default function CommunityPage({ loaderData }: Route.ComponentProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const sorting = searchParams.get("sorting") || "newest";
   const period = searchParams.get("period") || "all";
-  console.log(loaderData);
   return (
     <div className="space-y-20">
       <Hero

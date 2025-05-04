@@ -101,7 +101,9 @@ export default function PostPage({
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link to={`/community/postId`}>{loaderData.post.title}</Link>
+              <Link to={`/community/${loaderData.post.post_id}`}>
+                {loaderData.post.title}
+              </Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
