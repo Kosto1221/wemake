@@ -2,7 +2,7 @@ import type { Route } from "../../../features/products/pages/+types/promote-page
 import type { MetaFunction } from "react-router";
 
 export function meta(): MetaFunction {
-  return () => [
+  return [
     { title: "Promote Product | ProductHunt Clone" },
     { name: "description", content: "Promote your product" },
   ];

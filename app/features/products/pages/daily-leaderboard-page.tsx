@@ -2,7 +2,7 @@ import type { Route } from "./+types/daily-leaderboard-page";
 import type { MetaFunction } from "react-router";
 
 export function meta({ params }: Route.MetaArgs): MetaFunction {
-  return () => [
+  return [
     {
       title: `${params.month}/${params.day}/${params.year} Leaderboard | ProductHunt Clone`,
     },
