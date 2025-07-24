@@ -1,4 +1,4 @@
-import type { Route } from "../../../+types/features/products/pages/products-pa ge";
+import type { Route } from "../../../+types/features/products/pages/products-page";
 import type { MetaFunction } from "@react-router/types";
 
 export function meta(): MetaFunction {
@@ -9,9 +9,7 @@ export function meta(): MetaFunction {
 }
 
 export function loader({ request }: Route.LoaderArgs) {
-  return {
-    products: [], // Add products fetch logic
-  };
+  return { hello: "world" };
 }
 
 export default function ProductsPage({ loaderData }: Route.ComponentProps) {
