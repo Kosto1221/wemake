@@ -1,8 +1,8 @@
-import type { Route } from "../../../+types/features/products/pages/categories-page";
-import type { MetaFunction } from "@react-router/types";
+import type { Route } from "../../../features/products/pages/+types/categories-page";
+import type { MetaFunction } from "react-router";
 
 export function meta(): MetaFunction {
-  return [
+  return () => [
     { title: "Categories | ProductHunt Clone" },
     { name: "description", content: "Browse products by category" },
   ];

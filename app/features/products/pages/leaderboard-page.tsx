@@ -1,8 +1,8 @@
-import type { Route } from "../../../+types/features/products/pages/leaderboard-page";
-import type { MetaFunction } from "@react-router/types";
+import type { Route } from "../../../features/products/pages/+types/leaderboard-page";
+import type { MetaFunction } from "react-router";
 
 export function meta(): MetaFunction {
-  return [
+  return () => [
     { title: "Leaderboard | ProductHunt Clone" },
     { name: "description", content: "Top products leaderboard" },
   ];

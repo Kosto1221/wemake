@@ -1,8 +1,8 @@
-import type { Route } from "../.  ./../+types/features/products/pages/monthly-leaderboard-page";
-import type { MetaFunction } from "@react-router/types";
+import type { Route } from "../../../features/products/pages/+types/monthly-leaderboard-page";
+import type { MetaFunction } from "react-router";
 
 export function meta({ params }: Route.MetaArgs): MetaFunction {
-  return [
+  return () => [
     { title: `${params.month}/${params.year} Leaderboard | ProductHunt Clone` },
     {
       name: "description",

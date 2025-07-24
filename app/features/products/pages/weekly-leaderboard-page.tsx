@@ -1,8 +1,8 @@
-import type { Route } from "../../  ../+types/features/products/pages/weekly-leaderboard-page";
-import type { MetaFunction } from "@react-router/types";
+import type { Route } from "../../../features/products/pages/+types/weekly-leaderboard-page";
+import type { MetaFunction } from "react-router";
 
 export function meta({ params }: Route.MetaArgs): MetaFunction {
-  return [
+  return () => [
     {
       title: `Week ${params.week}, ${params.year} Leaderboard | ProductHunt Clone`,
     },
