@@ -8,6 +8,13 @@
       "when": 1753688087150,
       "tag": "0000_broken_mandroid",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1753787755136,
+      "tag": "0001_rainy_maverick",
+      "breakpoints": true
     }
   ]
 }
