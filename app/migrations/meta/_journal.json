@@ -15,6 +15,13 @@
       "when": 1753787755136,
       "tag": "0001_rainy_maverick",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1753790646641,
+      "tag": "0002_colossal_slyde",
+      "breakpoints": true
     }
   ]
 }
